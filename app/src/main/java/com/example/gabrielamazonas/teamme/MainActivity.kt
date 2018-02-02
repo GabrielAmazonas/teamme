@@ -9,18 +9,23 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.drawer_activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() { // No need to extend other activity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.drawer_activity_main)
         setSupportActionBar(toolbar)
 
-        val toggle = ActionBarDrawerToggle(
+        /**
+        *@param activity the current activity
+        * drawer_layout:
+        */
+        val toggle: ActionBarDrawerToggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -41,6 +46,10 @@ class MainActivity : AppCompatActivity() {
 
     fun addChannelClicked(view: View) {
 
+
+    }
+
+    fun sendMsgBtnClicked(view: View){
 
     }
 
